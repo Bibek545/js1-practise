@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Grechen+Fuemen&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+
+  <style>
+    :root {
+      --orange-color: orange;
+      --black-color: rgb(64, 64, 64);
+      --white-color: rgb(211, 211, 211);
+      --sky-blue: rgb(89, 89, 230);
+
+      --bg-color: var(--white-color);
+      --text-color: var(--white-color);
+      --header-color: var(--sky-blue);
+
+      --toggle-on: inline;
+      --toggle-off: none;
+
+      font-family: "Roboto", serif;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    #check1 {
+      display: none;
+    }
+
+    .container {
+      width: 100vw;
+      min-height: 100vh;
+      background-color: var(--bg-color);
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      height: 50px;
+      background: grey;
+      padding: 0px 10px;
+      color: var(--text-color);
+      background-color: var(--header-color);
+    }
+
+    header>ul {
+      display: flex;
+      gap: 10px;
+      justify-content: end;
+      height: 100%;
+    }
+
+    header>ul>li {
+      list-style-type: none;
+    }
+
+    .toggle-on {
+      display: var(--toggle-on);
+    }
+
+    .toggle-off {
+      display: var(--toggle-off);
+    }
+
+    #check1:checked+.container {
+      --bg-color: var(--black-color);
+      --text-color: var(--black-color);
+      --header-color: var(--white-color);
+
+      --toggle-off: inline;
+      --toggle-on: none;
+    }
+
+    .wrapper {
+      display: flex;
+      padding: 10px;
+      padding-top: 40px;
+      gap: 0px;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
+
+    .card+div {
+      margin-left: -200px;
+    }
+
+    .card {
+      width: 300px;
+      height: 500px;
+      border-radius: 20px;
+      background-color: white;
+      border: 5px solid white;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      gap: 30px;
+      overflow: hidden;
+      box-shadow: 5px 6px 11px 4px #c1c1c1;
+      transition: all 0.2s ease-in;
+      cursor: pointer;
+      transform: perspective(600px) rotateY(10deg);
+    }
+
+    .card:hover {
+      transform: perspective(500px) rotatey(0deg) translateY(-50px);
+    }
+
+    .card:hover+div {
+      margin-left: 20px;
+      margin-right: 20px
+    }
+
+
+
+    .gradient1 {
+      --gradient-color: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
+    }
+
+    .gradient2 {
+      --gradient-color: linear-gradient(90deg, rgb(106 230 248) 0%, rgb(21 255 219) 50%, rgb(29 245 225) 100%);
+    }
+
+    .gradient3 {
+      --gradient-color: linear-gradient(90deg, rgb(52, 249, 95) 0%, rgb(19, 179, 35) 50%, rgb(83, 245, 83) 100%);
+    }
+
+
+    .icon {
+      width: 100%;
+      background: var(--gradient-color);
+      height: 50%;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 5em;
+      color: white;
+
+      border-bottom-right-radius: 200px 100px;
+
+    }
+
+    .detail {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      gap: 15px;
+      padding: 20px;
+    }
+
+    .detail>div>button {
+      width: 100px;
+      height: 40px;
+      border-radius: 30px;
+      border: 0px;
+      background: var(--gradient-color);
+      color: white;
+    }
+
+    .detail>div>h3 {
+      margin: 0;
+      padding: 0;
+
+    }
+  </style>
+</head>
+
+<body>
+
+  <input id="check1" type="checkbox">
+  <div class="container">
+    <header>
+      <label for="check1">
+
+        <i class="fa-solid fa-toggle-on toggle-on"></i>
+        <i class="fa-solid fa-toggle-off toggle-off"></i></label>
+      <ul>
+        <li>Home</li>
+        <li>About</li>
+      </ul>
+    </header>
+    <div class="wrapper">
+      <div class="card gradient1">
+        <div class="icon">
+          <i class="fa-brands fa-css3-alt"></i>
+        </div>
+
+        <div class="detail">
+          <div>
+            <h3>TITLE</h3>
+          </div>
+          <div>
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+            industry's standard dummy text ever since the 1500s.
+          </div>
+          <div>
+            <button>CSS3</button>
+          </div>
+
+        </div>
+      </div>
+      <div class="card gradient2">
+        <div class="icon">
+          <i class="fa-brands fa-html5"></i>
+        </div>
+
+        <div class="detail">
+          <div>
+            <h3>TITLE</h3>
+          </div>
+          <div>
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+            industry's standard dummy text ever since the 1500s.
+          </div>
+          <div>
+            <button>HTML5</button>
+          </div>
+
+        </div>
+      </div>
+      <div class="card gradient3">
+        <div class="icon">
+          <i class="fa-brands fa-html5"></i>
+        </div>
+
+        <div class="detail">
+          <div>
+            <h3>TITLE</h3>
+          </div>
+          <div>
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+            industry's standard dummy text ever since the 1500s.
+          </div>
+          <div>
+            <button>HTML5</button>
+          </div>
+
+        </div>
+      </div>
+      <div class="card gradient3">
+        <div class="icon">
+          <i class="fa-brands fa-html5"></i>
+        </div>
+
+        <div class="detail">
+          <div>
+            <h3>TITLE</h3>
+          </div>
+          <div>
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+            industry's standard dummy text ever since the 1500s.
+          </div>
+          <div>
+            <button>HTML5</button>
+          </div>
+
+        </div>
+      </div>
+      <div class="card gradient3">
+        <div class="icon">
+          <i class="fa-brands fa-html5"></i>
+        </div>
+
+        <div class="detail">
+          <div>
+            <h3>TITLE</h3>
+          </div>
+          <div>
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+            industry's standard dummy text ever since the 1500s.
+          </div>
+          <div>
+            <button>HTML5</button>
+          </div>
+
+        </div>
+      </div>
+      <div class="card gradient3">
+        <div class="icon">
+          <i class="fa-brands fa-html5"></i>
+        </div>
+
+        <div class="detail">
+          <div>
+            <h3>TITLE</h3>
+          </div>
+          <div>
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+            industry's standard dummy text ever since the 1500s.
+          </div>
+          <div>
+            <button>HTML5</button>
+          </div>
+
+        </div>
+      </div>
+      <div class="card gradient3">
+        <div class="icon">
+          <i class="fa-brands fa-html5"></i>
+        </div>
+
+        <div class="detail">
+          <div>
+            <h3>TITLE</h3>
+          </div>
+          <div>
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+            industry's standard dummy text ever since the 1500s.
+          </div>
+          <div>
+            <button>HTML5</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
